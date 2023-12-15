@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Echo Dot - 4th Gen</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    
+  </header>
+<nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="products.html">Our Products</a></li>
+        </ul>
+    </nav>
+   
+<section>
+  <main>
+    <table>
+      <tr>
+        <td>
+          <div class="product" data-description="Use your voice to play a song, artist or genre through Amazon Music, Apple Music, Spotify, Deezer and more. With multi-room music, you can fill your whole home with music, radio stations, podcasts and Audible using compatible Echo devices in different rooms.
+" data-feature="Voice control your    
+entertainment">
+            <img src="d1.jpg" alt="d1">
+            <p>FEATURE #1</p>
+          </div>
+        </td>
+        <td>
+          <div class="product" data-description="Manage compatible smart home devices using your voice. Switch on the lamp before getting out of bed, dim the lights from the sofa to watch a film, or turn the thermostat down as you head out." data-feature="Voice control 
+your home">
+            <img src="d2.jpg" alt="d2">
+            <p>FEATURE #2</p>
+          </div>
+        </td>
+        <td>
+          <div class="product" data-description="Alexa and Echo devices are built with multiple layers of privacy protection. Echo smart speakers have a Microphone Off button that electronically disconnects the microphones. You also have control over your voice recordings and can view, hear or delete them at any time." data-feature="Designed to protect
+your privacy">
+            <img src="d3.jpg" alt="d3">
+            <p>FEATURE #3</p>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <div class="product" data-description="Dual-band Wi-Fi supports 802.11(2.4 and 5 GHz) networks. Does not support connecting to ad-hoc (or peer-to-peer) Wi-Fi networks." data-feature="Wi-Fi Connectivity">
+            <img src="d4.jpg" alt="d4">
+            <p>FEATURE #4</p>
+          </div>
+        </td>
+        <td>
+          <div class="product" data-description="Wake word technology, streaming indicators, Microphone Off button, the ability to view and delete your voice recordings, and more. Visit the Alexa Privacy Hub to explore how Alexa and Echo devices are designed to protect your privacy." data-feature="Privacy Features">
+            <img src="d5.jpg" alt="d5">
+            <p>FEATURE #5</p>
+          </div>
+        </td>
+        <td>
+          <div class="product" data-description="The Alexa app and Alexa-enabled products include several features for customers with accessibility needs related to vision, hearing, mobility and speech." data-feature="Accessibility Features">
+            <img src="d6.jpg" alt="d6">
+            <p>FEATURE #6</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </main>
+</section>
+  <footer>
+        <div class="follow-us">
+            <p>Follow Us</p>
+            <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank"><img src="fb.ico" alt="Facebook"></a>
+                <a href="https://www.instagram.com" target="_blank"><img src="insta.ico" alt="Instagram"></a>
+                <a href="https://www.youtube.com" target="_blank"><img src="yt.ico" alt="YouTube"></a>
+            </div>
+        </div>
+    </footer>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const products = document.querySelectorAll('.product');
+
+    products.forEach((product) => {
+      product.addEventListener('mouseover', showPopup);
+      product.addEventListener('mouseout', hidePopup);
+    });
+
+    function showPopup(event) {
+      const product = event.currentTarget;
+      const description = product.dataset.description;
+      const feature = product.dataset.feature;
+
+      const popup = document.createElement('div');
+      popup.className = 'popup';
+      popup.innerHTML = `
+        <p>Description: ${description}</p>
+        <p>Feature: ${feature}</p>
+      `;
+
+      document.body.appendChild(popup);
+
+      const centerX = window.innerWidth / 2 - popup.clientWidth / 2;
+      const centerY = window.innerHeight / 2 - popup.clientHeight / 2;
+
+      popup.style.top = `${centerY}px`;
+      popup.style.left = `${centerX}px`;
+    }
+
+    function hidePopup() {
+      const popup = document.querySelector('.popup');
+      if (popup) {
+        document.body.removeChild(popup);
+      }
+    }
+  });
+</script>
+</body>
+</html>
